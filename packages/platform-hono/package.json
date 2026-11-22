@@ -1,6 +1,6 @@
 {
   "name": "@drogonjs/platform-hono",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -15,8 +15,8 @@
     "test": "bun test"
   },
   "dependencies": {
-    "@drogonjs/common": "^0.1.0",
-    "@drogonjs/core": "^0.1.1",
+    "@drogonjs/common": "^0.2.0",
+    "@drogonjs/core": "^0.2.0",
     "hono": "^4.9.6"
   },
   "devDependencies": {

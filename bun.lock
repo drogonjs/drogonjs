@@ -12,7 +12,7 @@
     },
     "packages/cli": {
       "name": "@drogonjs/cli",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "bin": {
         "drogon": "./bin/drogon.mjs",
       },
@@ -22,7 +22,7 @@
     },
     "packages/common": {
       "name": "@drogonjs/common",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "dependencies": {
         "reflect-metadata": "^0.2.2",
       },
@@ -36,7 +36,7 @@
     },
     "packages/config": {
       "name": "@drogonjs/config",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "dependencies": {
         "@drogonjs/common": "^0.1.0",
       },
@@ -47,7 +47,7 @@
     },
     "packages/core": {
       "name": "@drogonjs/core",
-      "version": "0.1.1",
+      "version": "0.2.0",
       "dependencies": {
         "@drogonjs/common": "^0.1.0",
       },
@@ -69,7 +69,7 @@
     },
     "packages/db": {
       "name": "@drogonjs/db",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "dependencies": {
         "@drogonjs/common": "^0.1.0",
         "@drogonjs/core": "^0.1.1",
@@ -90,7 +90,7 @@
     },
     "packages/openapi": {
       "name": "@drogonjs/openapi",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "dependencies": {
         "@drogonjs/common": "workspace:*",
         "@elysia/openapi": "^1.4.3",
@@ -105,7 +105,7 @@
     },
     "packages/platform-elysia": {
       "name": "@drogonjs/platform-elysia",
-      "version": "0.1.1",
+      "version": "0.2.0",
       "dependencies": {
         "@drogonjs/common": "^0.1.0",
         "@drogonjs/core": "^0.1.1",
@@ -120,7 +120,7 @@
     },
     "packages/platform-hono": {
       "name": "@drogonjs/platform-hono",
-      "version": "0.1.1",
+      "version": "0.2.0",
       "dependencies": {
         "@drogonjs/common": "^0.1.0",
         "@drogonjs/core": "^0.1.1",
@@ -134,7 +134,7 @@
     },
     "packages/testing": {
       "name": "@drogonjs/testing",
-      "version": "0.1.1",
+      "version": "0.2.0",
       "dependencies": {
         "@drogonjs/common": "^0.1.0",
         "@drogonjs/core": "^0.1.1",
