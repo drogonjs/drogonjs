@@ -1,6 +1,6 @@
 {
   "name": "@drogonjs/config",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -15,10 +15,10 @@
     "test": "bun test"
   },
   "dependencies": {
-    "@drogonjs/common": "^0.1.0"
+    "@drogonjs/common": "^0.2.0"
   },
   "devDependencies": {
-    "@drogonjs/core": "^0.1.1",
+    "@drogonjs/core": "^0.2.0",
     "typescript": "^5.9.2"
   }
 }
