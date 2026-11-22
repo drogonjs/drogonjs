@@ -1,0 +1,28 @@
+# Dependencies and build output
+node_modules
+dist
+*.tsbuildinfo
+
+# Declaration output belongs in dist/, never beside the sources
+packages/*/src/**/*.d.ts
+
+# Package tarballs from `npm pack` / `bun pm pack`
+*.tgz
+
+# Environment files; commit a .env.example instead
+.env
+.env.*
+!.env.example
+
+# Test and tool output
+coverage
+*.log
+
+# Local databases from trying out @drogonjs/db with SQLite
+*.sqlite
+*.sqlite3
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.idea

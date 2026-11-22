@@ -1,0 +1,34 @@
+{
+  "name": "@drogonjs/db",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": ["dist"],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "bun build ./src/index.ts --outdir ./dist --target bun --external @drogonjs/common --external @drogonjs/core --external drizzle-orm --external 'drizzle-orm/*' --external mysql2 && bunx tsc -p tsconfig.build.json --emitDeclarationOnly",
+    "typecheck": "bunx tsc -p tsconfig.json --noEmit",
+    "test": "bun test"
+  },
+  "dependencies": {
+    "@drogonjs/common": "^0.1.0",
+    "@drogonjs/core": "^0.1.1"
+  },
+  "peerDependencies": {
+    "drizzle-orm": ">=0.44.0",
+    "mysql2": "^3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "mysql2": { "optional": true }
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.17",
+    "drizzle-orm": "^0.45.4",
+    "mysql2": "^3.24.6",
+    "typescript": "^5.9.2"
+  }
+}

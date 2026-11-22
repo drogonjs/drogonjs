@@ -1,0 +1,24 @@
+{
+  "name": "@drogonjs/config",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": ["dist"],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "bun build ./src/index.ts --outdir ./dist --target bun --external @drogonjs/common && bunx tsc -p tsconfig.build.json --emitDeclarationOnly",
+    "typecheck": "bunx tsc -p tsconfig.json --noEmit",
+    "test": "bun test"
+  },
+  "dependencies": {
+    "@drogonjs/common": "^0.1.0"
+  },
+  "devDependencies": {
+    "@drogonjs/core": "^0.1.1",
+    "typescript": "^5.9.2"
+  }
+}

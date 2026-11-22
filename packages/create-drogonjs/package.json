@@ -1,0 +1,36 @@
+{
+  "name": "create-drogonjs",
+  "version": "0.2.0",
+  "description": "Scaffold a DrogonJS application",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "drogonjs",
+    "bun",
+    "elysia",
+    "hono",
+    "scaffold",
+    "starter"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "bin": {
+    "create-drogonjs": "./bin/create-drogonjs.mjs"
+  },
+  "files": [
+    "bin",
+    "src",
+    "templates"
+  ],
+  "engines": {
+    "node": ">=18.17.0"
+  },
+  "scripts": {
+    "test": "bun test",
+    "smoke": "node ./bin/create-drogonjs.mjs --help"
+  },
+  "dependencies": {
+    "@clack/prompts": "^0.11.0"
+  }
+}

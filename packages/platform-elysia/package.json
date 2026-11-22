@@ -1,0 +1,28 @@
+{
+  "name": "@drogonjs/platform-elysia",
+  "version": "0.1.1",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": ["dist"],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "bun build ./src/index.ts --outdir ./dist --target bun --external @drogonjs/common --external @drogonjs/core --external elysia && bunx tsc -p tsconfig.build.json --emitDeclarationOnly",
+    "typecheck": "bunx tsc -p tsconfig.json --noEmit",
+    "test": "bun test"
+  },
+  "dependencies": {
+    "@drogonjs/common": "^0.1.0",
+    "@drogonjs/core": "^0.1.1",
+    "elysia": "1.4.29",
+    "@sinclair/typebox": "^0.34.49"
+  },
+  "devDependencies": {
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.15.1",
+    "typescript": "^5.9.2"
+  }
+}

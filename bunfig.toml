@@ -1,0 +1,7 @@
+[install]
+peer = true
+
+[test]
+preload = ["./packages/common/src/polyfills.ts"]
+# Template specs import packages that only exist once a project is scaffolded.
+pathIgnorePatterns = ["packages/create-drogonjs/templates/**"]

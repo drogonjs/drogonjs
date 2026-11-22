@@ -1,0 +1,22 @@
+{
+  "name": "@drogonjs/cli",
+  "version": "0.1.0",
+  "type": "module",
+  "bin": {
+    "drogon": "./bin/drogon.mjs"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": ["bin", "dist"],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "bun build ./src/index.ts --outdir ./dist --target bun && bunx tsc -p tsconfig.build.json --emitDeclarationOnly",
+    "typecheck": "bunx tsc -p tsconfig.json --noEmit",
+    "test": "bun test"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2"
+  }
+}

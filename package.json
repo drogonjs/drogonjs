@@ -1,0 +1,25 @@
+{
+  "name": "drogonjs",
+  "private": true,
+  "type": "module",
+  "packageManager": "bun@1.4.2",
+  "workspaces": [
+    "packages/*",
+    "examples/*"
+  ],
+  "scripts": {
+    "build": "bun run --filter '*' build",
+    "typecheck": "bun run --filter '*' typecheck",
+    "test": "bun test",
+    "lint": "bun run --filter '*' lint",
+    "clean": "rm -rf packages/*/dist examples/*/dist && find packages -path '*/src/*' -name '*.d.ts' -delete",
+    "changeset": "changeset",
+    "version-packages": "changeset version && bun install",
+    "release": "bun run build && bun scripts/prepare-publish.ts && changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^3.0.3",
+    "@types/bun": "^1.3.14",
+    "typescript": "^5.9.3"
+  }
+}

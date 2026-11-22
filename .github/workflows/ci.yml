@@ -1,0 +1,72 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Typecheck, build and test
+    runs-on: ubuntu-latest
+    services:
+      # Runs the @drogonjs/db MySQL integration suite, which is skipped without MYSQL_URL.
+      mysql:
+        image: mysql:8.4
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: drogon
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1 -proot"
+          --health-interval=5s
+          --health-timeout=5s
+          --health-retries=20
+    env:
+      MYSQL_URL: mysql://root:root@127.0.0.1:3306/drogon
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version-file: package.json
+
+      - run: bun install --frozen-lockfile
+
+      - name: Typecheck
+        run: |
+          bunx tsc -p tsconfig.json --noEmit
+          bun run typecheck
+
+      - name: Build
+        run: bun run build
+
+      - name: Test
+        run: bun test
+
+  changeset:
+    name: Changeset present
+    if: github.event_name == 'pull_request' && github.head_ref != 'changeset-release/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version-file: package.json
+
+      - run: bun install --frozen-lockfile
+
+      # Fails when a published package changed without a changeset. For a change
+      # that should not release anything, run `bun run changeset --empty`.
+      - run: bunx changeset status --since=origin/${{ github.base_ref }}

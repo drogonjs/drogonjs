@@ -1,0 +1,34 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "paths": {
+      "@drogonjs/common": [
+        "./packages/common/src/index.ts"
+      ],
+      "@drogonjs/core": [
+        "./packages/core/src/index.ts"
+      ],
+      "@drogonjs/openapi": [
+        "./packages/openapi/src/index.ts"
+      ],
+      "@drogonjs/platform-elysia": [
+        "./packages/platform-elysia/src/index.ts"
+      ],
+      "@drogonjs/platform-hono": [
+        "./packages/platform-hono/src/index.ts"
+      ],
+      "@drogonjs/testing": [
+        "./packages/testing/src/index.ts"
+      ],
+      "@drogonjs/cli": [
+        "./packages/cli/src/index.ts"
+      ],
+      "@drogonjs/db": [
+        "./packages/db/src/index.ts"
+      ],
+      "@drogonjs/config": [
+        "./packages/config/src/index.ts"
+      ]
+    }
+  }
+}
